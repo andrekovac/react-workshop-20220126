@@ -1,39 +1,27 @@
 import React, { FC } from "react";
 import "./App.css";
-
-const meinValue: "Andre" | "David" = "Andre";
+import Name from "./components/Name";
 
 const App: FC = () => {
   const [name, setName] = React.useState("Andre");
   const [age, setAge] = React.useState(20);
 
-  const [person, setPerson] = React.useState({
-    name: "Andre",
-    age: 20,
-  });
+  const handleClick = () => {
+    setName("Max");
+    setAge(30);
+  };
 
   return (
-    <>
-      <div className="wrapper2" style={{ backgroundColor: "yellow" }}>
-        React Element von {person.name} and my age is {person.age}
-      </div>
-      <button
-        onClick={() => {
-          // name = "Max";
-          setName("Max");
-          setAge(30);
-
-          setPerson({
-            name: "Max",
-            age: 30,
-          });
-
-          console.log("name", name);
-        }}
-      >
-        Hier klicken
-      </button>
-    </>
+    <div>
+      <button onClick={handleClick}>Hier klicken</button>
+      <Name name={name} age={age} myNewProp={2343}>
+        <>
+          <span>Ich bin das Kind von der Name Komponent</span>
+          <span>Ich bin das Kind von der Name Komponent</span>
+        </>
+      </Name>
+      <Name name={name} />
+    </div>
   );
 };
 

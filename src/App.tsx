@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import "./App.css";
 import BookList from "./components/BookList";
 import Name from "./components/Name";
@@ -6,6 +6,22 @@ import Name from "./components/Name";
 const App: FC = () => {
   const [name, setName] = React.useState("Andre");
   const [age, setAge] = React.useState(20);
+
+  const fetchPhotos = async () => {
+    const response = await fetch(
+      "https://picsum.photos/v2/list?page=2&limit=100"
+    );
+    const result = await response.json();
+    console.log(result);
+  };
+
+  // fetch("https://picsum.photos/v2/list?page=2&limit=100")
+  // .then((response) => response.json())
+  // .then((result) => console.log(result));
+
+  useEffect(() => {
+    fetchPhotos();
+  }, []);
 
   const handleClick = () => {
     setName("Max");

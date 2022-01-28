@@ -1,6 +1,7 @@
 import React, { FC, useEffect } from "react";
 import "./App.css";
 import BookList from "./components/BookList";
+import MeineErsteKomponente from "./components/MeineErsteKomponente";
 import Name from "./components/Name";
 
 const App: FC = () => {
@@ -14,10 +15,6 @@ const App: FC = () => {
     const result = await response.json();
     console.log(result);
   };
-
-  // fetch("https://picsum.photos/v2/list?page=2&limit=100")
-  // .then((response) => response.json())
-  // .then((result) => console.log(result));
 
   useEffect(() => {
     fetchPhotos();

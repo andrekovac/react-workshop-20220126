@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import "./App.css";
+import BookList from "./components/BookList";
 import Name from "./components/Name";
 
 const App: FC = () => {
@@ -11,17 +12,19 @@ const App: FC = () => {
     setAge(30);
   };
 
+  const myIds = [0, 1, 2, 3, 4];
+
   return (
-    <div>
+    <>
       <button onClick={handleClick}>Hier klicken</button>
       <Name name={name} age={age} myNewProp={2343}>
-        <>
-          <span>Ich bin das Kind von der Name Komponent</span>
-          <span>Ich bin das Kind von der Name Komponent</span>
-        </>
+        <span>Ich bin das Kind von der Name Komponente</span>
       </Name>
-      <Name name={name} />
-    </div>
+      {myIds.map((num) => (
+        <Name key={num} name={name} />
+      ))}
+      <BookList />
+    </>
   );
 };
 

@@ -21,11 +21,7 @@ const useBook = (isbn: number) => {
     setBook(result);
   }, [isbn]);
 
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);
-
-  return book;
+  return [book, fetchData] as const;
 };
 
 export default useBook;

@@ -34,7 +34,7 @@ const App: FC = () => {
         <Route path="/books">
           <BooksScreen />
         </Route>
-        <Route path="/counter">
+        <Route path="/counter/:start/:step">
           <Counter />
         </Route>
         <Route>

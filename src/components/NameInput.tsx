@@ -1,17 +1,21 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const NameInput: React.FC = () => {
-  const [name, setName] = useState("");
+  const [name, setName] = useState<string>("");
+  const fileInput = useRef<HTMLInputElement>(null);
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const sendForm = (event: React.FormEvent) => {
     event.preventDefault();
-    console.log(event);
+    console.log("file name:", fileInput.current?.files?.[0].name);
+    console.log(name);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={sendForm} noValidate>
       <label htmlFor="name">Name</label>
+      {/* ... */}
       <input
+        required
         id="name"
         type="text"
         placeholder="Your name"
@@ -21,6 +25,8 @@ const NameInput: React.FC = () => {
           setName(event.target.value);
         }}
       />
+      <label htmlFor="file">Upload file</label>
+      <input id="file" type="file" ref={fileInput} />
       <button type="submit">Submit</button>
     </form>
   );

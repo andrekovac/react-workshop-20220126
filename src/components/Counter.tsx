@@ -17,7 +17,7 @@ const Counter: React.VFC = () => {
 
   return (
     <>
-      <button onClick={incrementCount}>{count}</button>
+      <button onClick={incrementCount}>Count: {count}</button>
       <button onClick={decrementCount}>-</button>
       <button onClick={resetCount}>reset</button>
     </>

@@ -21,6 +21,10 @@ const useBook = (isbn: number) => {
     setBook(result);
   }, [isbn]);
 
+  useEffect(() => {
+    // store result of data fetch in Redux store
+  }, [isbn]);
+
   return [book, fetchData] as const;
 };
 

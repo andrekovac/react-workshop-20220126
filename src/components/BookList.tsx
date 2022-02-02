@@ -1,17 +1,9 @@
 import React from "react";
+import useBooks from "../hooks/useBooks";
 import BookListItem from "./BookListItem";
 
-interface Book {
-  title: string;
-}
-
 export const BookList: React.VFC = () => {
-  const books: Book[] = [
-    { title: "A first Book" },
-    { title: "Another awesome Book" },
-    { title: "Learn React - the full book" },
-  ];
-
+  const [books] = useBooks();
   return (
     <>
       <h1>List of Books</h1>

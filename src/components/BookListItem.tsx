@@ -1,7 +1,8 @@
 import React from "react";
+import { BookI } from "../hooks/useBooks";
 
 interface BookListItemProps {
-  title: string;
+  title: BookI["title"];
 }
 
 export const BookListItem: React.FC<BookListItemProps> = ({ title }) => {

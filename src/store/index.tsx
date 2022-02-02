@@ -1,10 +1,12 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 
-import count from "./reducers/count";
+import countReducerVanillaRedux from "./reducers/count";
+import countSlice from "./slices/count";
 
 export const rootReducer = combineReducers({
   books: (state = [], _action) => state,
-  count,
+  count: countReducerVanillaRedux,
+  countReduxToolkit: countSlice,
 });
 
 export type StoreT = NonNullable<Parameters<typeof rootReducer>[0]>;

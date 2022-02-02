@@ -9,7 +9,7 @@ import { StoreT } from "./store";
 import CounterScreen from "./screens/CounterScreen";
 
 const App: FC = () => {
-  const count = useSelector<StoreT>((state) => state.count);
+  const count = useSelector<StoreT>((state) => state.countReduxToolkit);
 
   return (
     <>

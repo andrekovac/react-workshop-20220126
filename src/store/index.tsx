@@ -3,7 +3,7 @@ import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import count from "./reducers/count";
 
 export const rootReducer = combineReducers({
-  books: (state = []) => state,
+  books: (state = [], _action) => state,
   count,
 });
 

@@ -1,13 +1,28 @@
 import { Action } from "redux";
 
-import { INCREMENT } from "./actionTypes";
+import { ERHOEHEN, REDUZIEREN } from "./actionTypes";
 
-export type CounterActionT = {
-  type: typeof INCREMENT;
+// export type IncrementActionT = Action<typeof ERHOEHEN>;
+// export type DecrementActionT = Action<typeof REDUZIEREN>;
+
+// enum {
+//   ERHOEHEN = 'Erhohen',
+//   REDUZIEREN = 'Reduzieren',
+// };
+
+type CounterActionTypes = typeof REDUZIEREN | typeof ERHOEHEN;
+
+export type CounterActionT = Action<CounterActionTypes>;
+
+export const increment = (): CounterActionT => {
+  return {
+    type: ERHOEHEN,
+  };
 };
 
-export const increment = (): Action<typeof INCREMENT> => {
+// Redux step 2: Action Creator
+export const decrement = (): CounterActionT => {
   return {
-    type: INCREMENT,
+    type: REDUZIEREN,
   };
 };

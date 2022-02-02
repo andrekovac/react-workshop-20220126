@@ -4,6 +4,7 @@ import countReducerVanillaRedux from "./reducers/count";
 import countSlice from "./slices/count";
 
 export const rootReducer = combineReducers({
+  // TODO: Replace with books reducer from slice
   books: (state = [], _action) => state,
   count: countReducerVanillaRedux,
   countReduxToolkit: countSlice,

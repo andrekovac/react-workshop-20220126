@@ -1,11 +1,11 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 
 import countReducerVanillaRedux from "./reducers/count";
+import booksSlice from "./slices/books";
 import countSlice from "./slices/count";
 
 export const rootReducer = combineReducers({
-  // TODO: Replace with books reducer from slice
-  books: (state = [], _action) => state,
+  books: booksSlice,
   count: countReducerVanillaRedux,
   countReduxToolkit: countSlice,
 });

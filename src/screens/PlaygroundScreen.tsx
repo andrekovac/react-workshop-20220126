@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
-import Counter from "../components/Counter";
+import Book from "../components/Book";
+import Counter from "../components/counter/Counter";
 import NameInput from "../components/NameInput";
 
 const PlaygroundScreen: React.FC = () => {
@@ -31,7 +32,7 @@ const PlaygroundScreen: React.FC = () => {
     <div>
       {/* <Counter /> */}
       <NameInput />
-      {/* <Book isbn={9781484201497} /> */}
+      <Book isbn={9781484201497} />
       {/* <button onClick={handleClick}>Hier klicken</button>
       <Name name={name} age={age} myNewProp={2343}>
         <span>Ich bin das Kind von der Name Komponente</span>

@@ -9,8 +9,10 @@ type CounterParams = {
 const Counter: React.VFC = () => {
   const { start, step } = useParams<CounterParams>();
 
-  const startInt = parseInt(start);
-  const stepInt = parseInt(step);
+  const startInt = parseInt(start ?? 0);
+  const stepInt = parseInt(step ?? 1);
+
+  // local state
   const [count, setCount] = useState<number>(startInt);
 
   const incrementCount = () => {
